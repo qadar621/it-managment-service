@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website with Login & Posts</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Login Section -->
+  <div id="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required />
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+      <button type="submit">Login</button>
+    </form>
+    <p id="login-error" style="color: red;"></p>
+  </div>
+
+  <!-- Main Section (After Login) -->
+  <div id="main-container" style="display: none;">
+    <div id="header">
+      <h2>Welcome, <span id="current-user"></span>!</h2>
+      <button onclick="logout()">Logout</button>
+    </div>
+    
+    <!-- Post Message Section -->
+    <div id="post-section">
+      <h3>Qor Qoraal/Sawir/Video</h3>
+      <form id="postForm">
+        <textarea id="postText" placeholder="Qoraalkaaga halkan ku qor..." required></textarea>
+        <br />
+        <!-- File input for sawiro/video (isticmaalaha wuxuu gali karaa URL-ga faylka) -->
+        <input type="text" id="mediaURL" placeholder="Haddii aad leedahay URL sawir/video, geli halkan (ikhtiyaari)" />
+        <br />
+        <button type="submit">Gudbi Qoraalka</button>
+      </form>
+      <div id="posts"></div>
+    </div>
+    
+    <!-- Admin Section for User Management -->
+    <div id="admin-section" style="display: none;">
+      <h3>Maamul Isticmaaleyaasha</h3>
+      <button onclick="viewUsers()">Dhis Liiska Users</button>
+      <button onclick="addUser()">Ku Dar User Cusub</button>
+      <div id="user-list"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
